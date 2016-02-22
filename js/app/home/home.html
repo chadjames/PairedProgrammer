@@ -1,0 +1,52 @@
+<div>
+    <button ng-click="shuffle()"  type="button" class="btn btn-primary btn-block">Spin</button>
+    <div class="row">
+        <br>
+    </div>
+    <div class="row">
+
+        <div class="col-sm-4 programmer-box form-group">
+            <ul class="list-group">
+                <li class="nav-header list-group-item disabled"><a>Programmer</a></li>
+                <li ng-click="liClick($event)" class="list-group-item" ng-repeat="x in programmers">
+                    {{ x.name }}
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-4 language-box">
+            <ul class="list-group">
+                <li class="nav-header list-group-item disabled"><a>Language</a></li>
+                <li ng-click="liClick($event)" class="list-group-item" ng-repeat="x in languages">
+                    {{ x.name }}
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-4 kata-box">
+            <ul class="list-group">
+                <li class="nav-header list-group-item disabled"><a>Kata</a></li>
+                <li ng-click="liClick($event)" class="list-group-item" ng-repeat="x in katas">
+                    {{ x.name }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default rules-box">
+                <div class="panel-heading">Rules</div>
+                <div class="panel-body">A Basic Panel</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default rules-box">
+                <div class="panel-heading">Purpose</div>
+
+                <div class="panel-body">A Basic Panel</div>
+            </div>
+        </div>
+    </div>
+
+    {{message}}
+</div>
