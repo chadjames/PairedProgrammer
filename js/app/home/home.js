@@ -5,36 +5,16 @@ angular.module('app.home', ['ngRoute'])
             templateUrl: 'home/home.html',
             controller: 'homeController'
         });
-    }]).controller('homeController', ['$scope', '$interval', '$timeout', function ($scope, $interval, $timeout) {
-    $scope.programmers = [
-        {name: 'Jani Evens', country: 'Norway'},
-        {name: 'Hege Brown', country: 'Sweden'},
-        {name: 'Kai Choi', country: 'Denmark'},
-        {name: 'Chad James', country: 'Norway'},
-        {name: 'Mike Stevens', country: 'Sweden'},
-        {name: 'Sara Evans', country: 'Denmark'},
-        {name: 'Todd Rowe', country: 'Norway'},
-        {name: 'Scott Little', country: 'Sweden'},
-        {name: 'Lele Pons', country: 'Denmark'},
-        {name: 'Jorge Hera', country: 'Norway'},
-        {name: 'Hellen Keller', country: 'Sweden'},
-        {name: 'Tommy Boy', country: 'Denmark'}
-    ];
-    $scope.languages = [
-        {name: 'Java'},
-        {name: 'Groovy'},
-        {name: 'Javascript'},
-        {name: 'Scala'},
-        {name: 'Ruby'},
-        {name: 'Python'}
-    ];
-    $scope.katas = [
-        {name: 'FizzBuzz'},
-        {name: 'RomanNumeralConverter'},
-        {name: 'VendingMachine'},
-        {name: 'BerlinClock'},
-        {name: 'Anagrams'}
-    ];
+    }]).controller('homeController', ['$scope', '$interval', '$timeout', '$firebaseArray', '$firebaseAuth', function ($scope, $interval, $timeout, $firebaseArray, $firebaseAuth) {
+    var fireBaseRef = new Firebase("https://paired-progammer.firebaseio.com");
+    var programmers = new Firebase("https://paired-progammer.firebaseio.com/programmer");
+    var languages = new Firebase("https://paired-progammer.firebaseio.com/languages");
+    var katas = new Firebase("https://paired-progammer.firebaseio.com/katas");
+
+    $scope.programmers = $firebaseArray(programmers);
+    $scope.languages = $firebaseArray(languages);
+    $scope.katas =$firebaseArray(katas);
+
     var data_arrays = [$scope.programmers, $scope.languages, $scope.katas];
     var current_shuffle_index = 0;
     var completeSpin = false;
@@ -47,6 +27,20 @@ angular.module('app.home', ['ngRoute'])
             $interval.cancel($scope.timer);
             selectItemForGroup();
         }
+    };
+    $scope.test = function(){
+
+            // create an instance of the authentication service
+        fireBaseRef.authWithPassword({
+            email    : "chadjames@columbus.rr.com",
+            password : "correcthorsebatterystaple"
+        }, function(error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+            } else {
+                console.log("Authenticated successfully with payload:", authData);
+            }
+        });
     };
     $scope.shuffle = function (array) {
         var random = Math.round(Math.random() * (4500 - 500)) + 500;
@@ -85,6 +79,7 @@ angular.module('app.home', ['ngRoute'])
         selectedLanguage = results[1];
         selectedKata = results[2];
     }
+
     function selectItemForGroup() {
         console.log('select item grp');
         var currentGroup = $('.list-group')[current_shuffle_index];
