@@ -1,47 +1,94 @@
-<div ng-controller="homeController">
-    <button ng-click="test()"  type="button" class="btn btn-primary btn-block">Spin</button>
+<div ng-controller="homeController" xmlns:max-height="http://www.w3.org/1999/xhtml" xmlns:300px xmlns:300px>
+    <button ng-click="shuffle()" type="button" class="btn btn-primary btn-block">Spin</button>
     <div class="row">
         <br>
     </div>
     <div class="row">
 
         <div class="col-sm-4 programmer-box form-group">
-            <ul class="list-group">
-                <li class="nav-header list-group-item disabled"><a>Programmer</a></li>
-                <li ng-click="liClick($event)" class="list-group-item" ng-repeat="x in programmers">
-                    {{ x.name }}
-                </li>
-            </ul>
+            <div class="panel panel-default shuffle-group" >
+                <div class="panel-heading shuffle-group-heading"><a>Programmer</a></div>
+                <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 300px;min-height:300px;overflow-y:scroll;">
+                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="x in programmers">
+                        {{ x.name }}
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="col-sm-4 language-box">
-            <ul class="list-group">
-                <li class="nav-header list-group-item disabled"><a>Language</a></li>
-                <li ng-click="liClick($event)" class="list-group-item" ng-repeat="x in languages">
-                    {{ x.name }}
-                </li>
-            </ul>
+
+
+        <div class="col-sm-4 language-box form-group">
+            <div class="panel panel-default shuffle-group" >
+                <div class="panel-heading shuffle-group-heading"><a>Language</a></div>
+                <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 300px;overflow-y:scroll;">
+                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="x in languages">
+                        {{ x.name }}
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="col-sm-4 kata-box">
-            <ul class="list-group">
-                <li class="nav-header list-group-item disabled"><a>Kata</a></li>
-                <li ng-click="liClick($event)" class="list-group-item" ng-repeat="x in katas">
-                    {{ x.name }}
-                </li>
-            </ul>
+
+
+        <div class="col-sm-4 kata-box form-group">
+            <div class="panel panel-default shuffle-group" >
+                <div class="panel-heading shuffle-group-heading"><a>Kata</a></div>
+                <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 300px;overflow-y:scroll;">
+                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="x in katas">
+                        {{ x.name }}
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+
+
     </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default rules-box">
-                <div class="panel-heading">Rules</div>
-                <div class="panel-body">A Basic Panel</div>
+                <div class="panel-heading">Overview</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <h3>WHAT TO DO AFTER SPINNING</h3>
+                                <li>Select spin above</li>
+                                <li>Review kata requirements</li>
+                                <li>Create a GitHub repository</li>
+                                <li>Create the initial class and associated test class</li>
+                                <li>Add the first broken test and push to your repository</li>
+                                <li>Inform your chosen partner of the repository address</li>
+                                <li>Wait for your partner to fix your broken test</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <h3>GENERAL GUIDELINES</h3>
+                                <li>DO NOT WRITE CODE WITHOUT YOUR PARTNER FIRST WRITING A BROKEN TEST</li>
+                                <li>Tests should fail for a valid reason... i.e not for an exception</li>
+                                <li>Use good commit messages, this is your way to communicate with your partner</li>
+                                <li>Reactor when you see a good chance to improve the code without breaking existing tests</li>
+
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default rules-box">
-                <div class="panel-heading">Purpose</div>
+                <div class="panel-heading">Why Katas / Why Pairing</div>
 
                 <div class="panel-body">A Basic Panel</div>
             </div>

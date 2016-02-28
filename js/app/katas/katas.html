@@ -1,1 +1,12 @@
-<p>Languagesxxx123</p>
+<div ng-controller="katasController">
+    <div class="panel panel-default rules-box">
+        <div class="panel-heading">Languages</div>
+        <div class="panel-body">
+            <div ng-click="liClick($event)"  ng-repeat="kata in katas">
+                <a href={{kata.url}}>{{kata.name}}</a>
+                {{kata.description}}
+
+            </div>
+        </div>
+    </div>
+</div>
