@@ -22,7 +22,6 @@ angular.module('app.home', ['ngRoute'])
                 if (angular.isDefined($scope.timer)) {
                     $interval.cancel($scope.timer);
                     selectItemForGroup();
-                    moveSelectedItemToTop();
                 }
             };
 
@@ -76,11 +75,8 @@ angular.module('app.home', ['ngRoute'])
             }
 
             function selectItemForGroup() {
-                console.log('select item grp');
                 var currentGroup = $('.shuffle-group')[current_shuffle_index];
-                var random = Math.floor((Math.random() * data_arrays[current_shuffle_index].length) + 1);
                 var child = $(currentGroup).children('.shuffle-group-panel').children('.shuffle-group-item')[2];
-                data_arrays[current_shuffle_index][0] = data_arrays[current_shuffle_index][random - 1];
 
                 $(child).css("background-color", '#337ab7');
                 $(child).addClass('selected');

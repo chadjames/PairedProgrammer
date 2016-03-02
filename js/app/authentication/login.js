@@ -6,15 +6,16 @@ angular.module('app.login', ['ngRoute'])
             templateUrl: 'authentication/login.html',
             controller: 'userController'
         });
-    }]).controller('userController', function($scope, authenticationService) {
+    }]).controller('userController', function($scope, programmerService) {
     $scope.register = function() {
 
 
         alert($scope.username);
-        var ref = new Firebase("https://paired-progammer.firebaseio.com");;
+        var ref = new Firebase("https://paired-progammer.firebaseio.com");
         ref.createUser({
             email: $scope.username,
             password: $scope.password
+
         }, function(error, userData) {
             if (error) {
                 switch (error.code) {
@@ -29,9 +30,24 @@ angular.module('app.login', ['ngRoute'])
                 }
             } else {
                 //create matching user
+                programmerService.allProgrammers().$add({name: $scope.username, uid:userData.uid });
                 console.log("Successfully created user account with uid:", userData.uid);
             }
         });
     }
+    $scope.login = function(){
+        var ref = new Firebase("https://paired-progammer.firebaseio.com");
+        ref.authWithPassword({
+            email: $scope.username,
+            password: $scope.password
+        }, function(error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+            } else {
+                console.log("Authenticated successfully with payload:", authData);
+            }
+
+
+    })}
 
 });
