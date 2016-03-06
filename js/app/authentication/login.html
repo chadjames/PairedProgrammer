@@ -1,119 +1,156 @@
 <div class="row">
 
+    <div class="col-md-12 register-box form-group">
+        <div class="panel panel-default ">
+            <div class="panel-heading "></div>
+            <div class="panel-body shuffle-group-panel fixed-panel">
 
-    <div class="col-md-4 login-box form-group">
-        <div class="panel panel-default shuffle-group">
-            <div class="panel-heading shuffle-group-heading"><a>Login</a></div>
-            <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 400px;min-height:400px;overflow-y:hidden;">
-                <form name="form" ng-submit="login()" role="form">
-                    <div class="form-group" ng-class="">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username" class="form-control" ng-model="username"
-                               required/>
-                        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
-                    </div>
-                    <div class="form-group" ng-class="">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" class="form-control" ng-model="password"
-                               required/>
-                        <span ng-show="" class="help-block">Password is required</span>
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit"  class="btn btn-primary" style="position: absolute;bottom: 10%;right:10%;">
-                            Login
-                        </button>
-                        <!--<img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
-                        <!--<a href="#/register" class="btn btn-link">Register</a>-->
-                    </div>
-                </form>
-            </div>
 
-        </div>
-    </div>
-
-    <div class="col-md-8 register-box form-group">
-        <div class="panel panel-default shuffle-group">
-            <div class="panel-heading shuffle-group-heading"><a>SignUp</a></div>
-            <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 400px;min-height:400px;overflow-y:hidden;">
-                <form name="form" ng-submit="register()" role="form" ng-controller="userController">
-
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group" ng-class="">
-                                <label for="username">Username</label>
-                                <input type="text" name="username" id="s_username" class="form-control"
-                                       ng-model="username"
-                                       required/>
-                                <span ng-show="form.username.$dirty && form.username.$error.required"
-                                      class="help-block">Username is required</span>
-                            </div>
-                            <div class="form-group" ng-class="">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="s_password" class="form-control"
-                                       ng-model="password"
-                                       required/>
-                                <span ng-show="" class="help-block">Password is required</span>
-                            </div>
-
-                        </div>
-                        <div class="col-md-2">
+                <div class="col-md-4 login-box form-group">
+                    <div class="panel panel-default shuffle-group">
+                        <div class="panel-heading shuffle-group-heading"><a>Login</a></div>
+                        <div class="panel-body shuffle-group-panel fixed-panel"
+                             style="max-height: 500px;min-height:500px;overflow-y:hidden;">
+                            <form name="form" novalidate="novalidate" ng-submit="login()" role="form">
+                                <div class="form-group" ng-class="">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" id="username" class="form-control"
+                                           ng-model="username"
+                                           required=""
+                                    />
+                                </div>
+                                <div class="form-group" ng-class="">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                           ng-model="password"
+                                           required=""/>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary"
+                                            style="position: absolute;bottom: 10%;right:10%;">
+                                        Login
+                                    </button>
+                                    <!--<img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
+                                    <!--<a href="#/register" class="btn btn-link">Register</a>-->
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="col-md-4">
-                            <div class="form-group" ng-class="" >
-
-                                <label>Concurrent Sessions</label>
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </div>
-
-                        </div>
                     </div>
+                </div>
 
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group" ng-class="">
+                <div class="col-md-8 register-box form-group">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading "><a>SignUp</a></div>
+                        <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 500px;min-height:500px;overflow-y:hidden;">
+                            <form name="form" ng-submit="register()" role="form" ng-controller="userController"
+                                  novalidate="novalidate">
 
-                                <div ng-controller="languagesController">
-                                    <div class="panel-body">
-                                        <div ng-repeat="x in languages">
-                                            <div class="col-md-3">
-                                                <label>
-                                                    <input type="checkbox">
-                                                    {{ x.name }}
-                                                </label>
+                                <div class="row">
+                                    <div class="col-md-5">
+
+                                        <div class="form-group" ng-class="">
+                                            <label for="r_firstname">First Name</label>
+                                            <input type="text" name="firstName" id="r_firstName" class="form-control"
+                                                   placeholder="First Name"
+                                                   ng-model="r_firstname"
+                                                   required/>
+                                        </div>
+
+                                        <div class="form-group" ng-class="">
+                                            <label for="r_lastname">Last Name</label>
+                                            <input type="text" name="lastName" id="r_lastName" class="form-control"
+                                                   placeholder="Last Name"
+                                                   ng-model="r_lastname"
+                                                   required/>
+                                        </div>
+
+                                        <div class="form-group" ng-class="">
+                                            <label for="username">Username</label>
+                                            <input type="text" name="username" id="r_username" class="form-control"
+                                                   placeholder="Username"
+                                                   ng-model="r_username"
+                                                   required/>
+                                        </div>
+
+
+                                        <div class="form-group" ng-class="">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" placeholder="Email" id="email"
+                                                   class="form-control"
+                                                   ng-model="email"
+                                                   required/>
+
+                                        </div>
+                                        <div class="form-group" ng-class="">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" id="r_password" class="form-control"
+                                                   placeholder="Password"
+                                                   ng-model="r_password"
+                                                   required/>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="form-group" ng-class="">
+
+                                            <label>Concurrent Sessions</label>
+                                            <select ng-model="sessions" name="sessions" id="sessions">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" ng-class="">
+
+                                            <div ng-controller="languagesController">
+                                                <div class="panel-body">
+
+                                                    <div ng-repeat="x in languages">
+                                                        <div class="col-md-6" id="selected_languages">
+
+                                                            <label>
+                                                                <input type="checkbox" ng-model="sl[x.name]"
+                                                                       value="{{ x.name }}">
+                                                                {{ x.name }}
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
                                             </div>
-
                                         </div>
                                     </div>
 
-                                </div>
-                            </div>
 
+                                    <div class="col-md-2">
+                                    </div>
+
+                                </div>
+                                <div class="form-group form-actions" ng-class="">
+                                    <button type="submit" class="btn btn-primary" style="position: absolute;bottom: 10%;right:10%;">
+                                        Register
+                                    </button>
+                                </div>
+                                <div ng-controller="homeController">
+
+                                </div>
+
+
+                            </form>
 
                         </div>
+
                     </div>
-
-
-                            <button type="submit" class="btn btn-primary" style="position: absolute;bottom: 10%;right:5%;">
-                                Register
-                            </button>
-                            <!--<img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
-                            <!--<a href="#/register" class="btn btn-link">Register</a>-->
-
-
-                </form>
-
+                </div>
             </div>
-
         </div>
     </div>
+</div>
 
 
 </div>

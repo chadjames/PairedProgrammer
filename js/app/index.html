@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -15,6 +17,9 @@
     <script src="authentication/login.js"></script>
     <script src="authentication/userService.js"></script>
     <script src="services/commonService.js"></script>
+    <script src="common/header.js"></script>
+    <script src="https://cdn.rawgit.com/jonsamwell/angular-auto-validate/master/dist/jcs-auto-validate.js"></script>
+
 
     <script src="languages/languages.js"></script>
     <link rel="stylesheet" type="text/css" href="mystyles.css"/>
@@ -31,36 +36,21 @@
 </head>
 <body ng-app="app">
 
-<div class="container">
+<div class="container" ng-controller="homeController">
 
     <div id="dialog" title="Basic dialog">
     </div>
 
 
+    <div ng-nav></div>
 
-    <nav class="navbar navbar-default" role="navigation">
 
-        <a class="navbar-brand" href=""><b>Paired Programmer</b></a>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="#home">About</a></li>
-                <li><a href="#katas">Katas</a></li>
-                <li><a href="#languages">Languages</a></li>
-                <li><a href="#seeds">Seeds</a></li>
-                <li><a href="#tdd">TDD</a></li>
-                <li><a href="#programmers">Programmers</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#login">Sign Up</a></li>
-
-            </ul>
-        </div>
-    </nav>
 
 
 
     <div id="main">
         <div ng-view>
+
 
         </div>
         {{message}}

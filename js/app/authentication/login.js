@@ -1,53 +1,55 @@
-
 angular.module('app.login', ['ngRoute'])
 
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/login', {
             templateUrl: 'authentication/login.html',
             controller: 'userController'
         });
-    }]).controller('userController', function($scope, programmerService) {
-    $scope.register = function() {
+    }]).controller('userController', function ($filter,
+                                               $cookies,
+                                               $window,
+                                               $scope,
+                                               programmerService,
+                                               $rootScope,
+                                               userCreationService) {
 
+    $scope.register = function () {
+        userCreationService.createUser(
+            $scope.email,
+            $scope.r_password,
+            $scope.r_firstname,
+            $scope.r_lastname,
+            $scope.r_username,
+            3,
+            'java');
+    };
+    $scope.login = function () {
 
-        alert($scope.username);
-        var ref = new Firebase("https://paired-progammer.firebaseio.com");
-        ref.createUser({
-            email: $scope.username,
-            password: $scope.password
+        userCreationService.loginUser(
+            $scope.username,
+            $scope.password,
+            function (result) {
+                if (result) {
+                    //get the user object for the id and store
+                    var prog = programmerService.allProgrammers();
+                    prog.$loaded()
+                        .then(function () {
 
-        }, function(error, userData) {
-            if (error) {
-                switch (error.code) {
-                    case "EMAIL_TAKEN":
-                        console.log("The new user account cannot be created because the email is already in use.");
-                        break;
-                    case "INVALID_EMAIL":
-                        console.log("The specified email is not a valid email.");
-                        break;
-                    default:
-                        console.log("Error creating user:", error);
+                            angular.forEach(prog, function (p) {
+                                console.log(p);
+                            })
+                        });
+
+                    $cookies.put('currentUser', $scope.username);
+                    userCreationService.currentUser = $scope.username;
+                    $window.location.href = '#home';
+
                 }
-            } else {
-                //create matching user
-                programmerService.allProgrammers().$add({name: $scope.username, uid:userData.uid });
-                console.log("Successfully created user account with uid:", userData.uid);
             }
-        });
-    }
-    $scope.login = function(){
-        var ref = new Firebase("https://paired-progammer.firebaseio.com");
-        ref.authWithPassword({
-            email: $scope.username,
-            password: $scope.password
-        }, function(error, authData) {
-            if (error) {
-                console.log("Login Failed!", error);
-            } else {
-                console.log("Authenticated successfully with payload:", authData);
-            }
+        );
 
 
-    })}
+    };
+
 
 });

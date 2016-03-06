@@ -1,16 +1,16 @@
 angular.module('app')
-    .factory('authenticationService', function(){
+    .factory('authenticationService', function () {
 
-    }).factory('userCreationService', function(){
+    }).service('userCreationService', function ($cookies, $timeout, $rootScope, programmerService) {
     var ref = new Firebase("https://paired-progammer.firebaseio.com");
+    this.currentUser;
 
-    return {
-        createUser: function(email, password){
-            console.log('ucservice ' + email + ' pw ' + password);
+
+        this.createUser = function (email, password, firstName, lastName, userName, concurrentSessions, languages) {
             ref.createUser({
                 email: email,
                 password: password
-            }, function(error, userData) {
+            }, function (error, userData) {
                 if (error) {
                     switch (error.code) {
                         case "EMAIL_TAKEN":
@@ -25,12 +25,35 @@ angular.module('app')
                 } else {
                     //create matching user
                     console.log("Successfully created user account with uid:", userData.uid);
+                    programmerService.allProgrammers().$add({
+                        uid: userData.uid,
+                        firstName: firstName,
+                        lastName: lastName,
+                        userName: userName,
+                        concurrentSessions: concurrentSessions,
+                        languages: languages
+                    });
+
                 }
             });
-        }
+        };
 
-    }
 
+        this.loginUser =  function (username, password, callback) {
+            ref.authWithPassword({
+                email: username,
+                password: password
+            }, function (error, authData) {
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else {
+                    console.log("Authenticated successfully with payload:", authData);
+                    callback(true);
+                }
+
+            });
+
+        };
 
 
 });
