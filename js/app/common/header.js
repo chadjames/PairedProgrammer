@@ -8,10 +8,10 @@ angular.module('app.common', [])
     if($cookies.get('currentUser') != null){
         userCreationService.currentUser = $cookies.get('currentUser') ;
     }
-    console.log('cookie ' + $cookies.get('currentUser') + ' testcrap ' + $scope.testCrap);
+    console.log('cookie ' + $cookies.get('currentUser') + ' currentUser ' + $scope.currentUser);
     $scope.$watch(function(){return userCreationService.currentUser}, function(newValue, oldValue){
-        $scope.testCrap = userCreationService.currentUser;
-        console.log('watch ' + $scope.testCrap);
+        $scope.currentUser = userCreationService.currentUser;
+        console.log('watch ' + $scope.currentUser);
     });
 
 });

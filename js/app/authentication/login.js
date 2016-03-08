@@ -1,5 +1,4 @@
 angular.module('app.login', ['ngRoute'])
-
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/login', {
             templateUrl: 'authentication/login.html',
@@ -15,14 +14,13 @@ angular.module('app.login', ['ngRoute'])
                                                userCreationService) {
 
     $scope.register = function () {
-        userCreationService.createUser(
-            $scope.email,
-            $scope.r_password,
-            $scope.r_firstname,
-            $scope.r_lastname,
-            $scope.r_username,
-            3,
-            'java');
+        userCreationService.createUser($scope.email,
+                                       $scope.r_password,
+                                       $scope.r_firstname,
+                                       $scope.r_lastname,
+                                       $scope.r_username,
+                                       3,
+                                       'java');
     };
     $scope.login = function () {
 
@@ -35,13 +33,7 @@ angular.module('app.login', ['ngRoute'])
                     userCreationService.currentUser = user.userName;
                     $window.location.href = '#home';
                 });
-
-
             }
         );
-
-
     };
-
-
 });

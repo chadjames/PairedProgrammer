@@ -1,0 +1,40 @@
+<div class="col-md-12 ">
+    <div class="panel panel-default ">
+        <div class="panel-heading "><b>Next Steps</b></div>
+        <div class="panel-body fixed-panel">
+
+
+            <div class="form-group" ng-class="">
+                <li><b>Review the instructions for the {{kata}} kata.</b></li>
+                <br>
+
+                <li>
+                    <label for="repo_url">Create Repository and Enter URL:</label>
+                    <input type="text" name="repo_url" id="repo_url" class="form-control"
+                           placeholder="Repository"
+                           ng-model="repo_url"
+                           required/>
+                </li>
+                <br>
+
+                <li>
+                    <label for="introduction">Introduce yourself to your partner:</label>
+                            <textarea rows="4" cols="50" name="introduction" id="introduction" class="form-control"
+                                      placeholder="Introduction"
+                                      ng-model="introduction"
+                                      required></textarea>
+
+                </li>
+                <br>
+                <br>
+                <div class="form-group form-actions" ng-class="">
+                    <button type="submit" class="btn btn-primary">
+                        Send
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+

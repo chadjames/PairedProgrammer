@@ -6,7 +6,5 @@ angular.module('app.languages', ['ngRoute'])
             controller: 'languagesController'
         });
     }]).controller('languagesController', function ($scope, languageService) {
-
     $scope.languages = languageService.allLanguages();
-
 });

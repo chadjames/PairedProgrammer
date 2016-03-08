@@ -7,5 +7,4 @@ angular.module('app.katas', ['ngRoute'])
         });
     }]).controller('katasController', function ($scope, kataService) {
     $scope.katas = kataService.allKatas();
-
 });

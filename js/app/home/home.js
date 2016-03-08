@@ -5,7 +5,7 @@ angular.module('app.home', ['ngRoute'])
             templateUrl: 'home/home.html',
             controller: 'homeController'
         });
-    }]).controller('homeController', function (programmerService, kataService, languageService, $scope, $interval, $timeout, $rootScope) {
+    }]).controller('homeController', function ($window,acceptService, programmerService, kataService, languageService, $scope, $interval, $timeout, $rootScope) {
 
     $scope.programmers = programmerService.allProgrammers();
     $scope.languages = languageService.allLanguages();
@@ -17,8 +17,6 @@ angular.module('app.home', ['ngRoute'])
     var selectedPerson;
     var selectedLanguage;
     var selectedKata;
-
-
 
     function stopTimerAndSelect() {
         if (angular.isDefined($scope.timer)) {
@@ -64,12 +62,13 @@ angular.module('app.home', ['ngRoute'])
         current_shuffle_index = 0;
         completeSpin = false;
         $('.selected').each(function () {
+            $(this).removeClass('selected');
             $(this).css('background-color', 'white');
-        })
-
-
+        });
+        selectedPerson = null;
+        selectedLanguage = null;
+        selectedKata = null;
     }
-
     function setSelectedItems() {
         var results = [];
         $('.selected').each(function () {
@@ -79,7 +78,9 @@ angular.module('app.home', ['ngRoute'])
         selectedLanguage = results[1];
         selectedKata = results[2];
     }
-
+    function accept(){
+        acceptService.setData(selectedPerson,selectedLanguage, selectedKata);
+    }
     function selectItemForGroup() {
         var currentGroup = $('.shuffle-group')[current_shuffle_index];
         var child = $(currentGroup).children('.shuffle-group-panel').children('.shuffle-group-item')[2];
@@ -101,8 +102,10 @@ angular.module('app.home', ['ngRoute'])
                                 $(this).dialog("close");
                             },
                             "ACCEPT": function () {
-                                resetBoard();
+                                accept();
                                 $(this).dialog("close");
+                                $window.location.href = '#partnerAccept';
+
                             }
                         }
                     }

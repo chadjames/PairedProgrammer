@@ -6,45 +6,41 @@
     <div class="row">
 
         <div class="col-sm-4 programmer-box form-group">
-            <div class="panel panel-default shuffle-group" >
+            <div class="panel panel-default shuffle-group">
                 <div class="panel-heading shuffle-group-heading"><a>Programmer</a></div>
-                <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 300px;min-height:300px;overflow-y:scroll;">
-                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="programmer in programmers">
+                <div class="panel-body shuffle-group-panel fixed-panel"
+                     style="max-height: 300px;min-height:300px;overflow-y:scroll;">
+                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item"
+                         ng-repeat="programmer in programmers">
                         {{programmer.userName}}
                     </div>
                 </div>
 
             </div>
         </div>
-
-
         <div class="col-sm-4 language-box form-group">
-            <div class="panel panel-default shuffle-group" >
+            <div class="panel panel-default shuffle-group">
                 <div class="panel-heading shuffle-group-heading"><a>Language</a></div>
                 <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 300px;overflow-y:scroll;">
-                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="x in languages">
-                        {{ x.name }}
+                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item"
+                         ng-repeat="language in languages">
+                        {{ language.name }}
                     </div>
                 </div>
 
             </div>
         </div>
-
-
         <div class="col-sm-4 kata-box form-group">
-            <div class="panel panel-default shuffle-group" >
+            <div class="panel panel-default shuffle-group">
                 <div class="panel-heading shuffle-group-heading"><a>Kata</a></div>
                 <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 300px;overflow-y:scroll;">
-                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="x in katas">
-                        {{ x.name }}
+                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="kata in katas">
+                        {{ kata.name }}
                     </div>
                 </div>
 
             </div>
         </div>
-
-
-
     </div>
     <div class="row">
         <div class="col-sm-12">
@@ -70,30 +66,15 @@
                                 <li>DO NOT WRITE CODE WITHOUT YOUR PARTNER FIRST WRITING A BROKEN TEST</li>
                                 <li>Tests should fail for a valid reason... i.e not for an exception</li>
                                 <li>Use good commit messages, this is your way to communicate with your partner</li>
-                                <li>Reactor when you see a good chance to improve the code without breaking existing tests</li>
+                                <li>Reactor when you see a good chance to improve the code without breaking existing
+                                    tests
+                                </li>
 
                             </ul>
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-default rules-box">
-                <div class="panel-heading">Why Katas / Why Pairing</div>
-
-                <div class="panel-body">A Basic Panel</div>
-            </div>
-        </div>
-    </div>
-
-    {{message}}
 </div>

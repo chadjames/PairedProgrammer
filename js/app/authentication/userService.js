@@ -4,8 +4,6 @@ angular.module('app')
     }).service('userCreationService', function ($cookies, $timeout, $rootScope, programmerService) {
     var ref = new Firebase("https://paired-progammer.firebaseio.com");
     this.currentUser;
-
-
         this.createUser = function (email, password, firstName, lastName, userName, concurrentSessions, languages) {
             ref.createUser({
                 email: email,
@@ -23,7 +21,6 @@ angular.module('app')
                             console.log("Error creating user:", error);
                     }
                 } else {
-                    //create matching user
                     console.log("Successfully created user account with uid:", userData.uid);
                     programmerService.allProgrammers().$add({
                         uid: userData.uid,
@@ -33,12 +30,9 @@ angular.module('app')
                         concurrentSessions: concurrentSessions,
                         languages: languages
                     });
-
                 }
             });
         };
-
-
         this.loginUser =  function (username, password, callback) {
             ref.authWithPassword({
                 email: username,
@@ -52,8 +46,5 @@ angular.module('app')
                 }
 
             });
-
         };
-
-
 });
