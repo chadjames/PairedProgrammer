@@ -5,7 +5,7 @@ angular.module('app.home', ['ngRoute'])
             templateUrl: 'home/home.html',
             controller: 'homeController'
         });
-    }]).controller('homeController', function (programmerService, kataService, languageService, $scope, $interval, $timeout, $rootScope, userCreationService) {
+    }]).controller('homeController', function (programmerService, kataService, languageService, $scope, $interval, $timeout, $rootScope) {
 
     $scope.programmers = programmerService.allProgrammers();
     $scope.languages = languageService.allLanguages();
@@ -97,6 +97,7 @@ angular.module('app.home', ['ngRoute'])
                         title: 'Your Mission', width: 600,
                         buttons: {
                             "DECLINE": function () {
+                                resetBoard();
                                 $(this).dialog("close");
                             },
                             "ACCEPT": function () {

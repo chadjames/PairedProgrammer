@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c0f02c1-2b14-469f-baad-13285be30a00" name="Default" comment="Remo">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/common/header.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/common/navBar.html" />
+    <list default="true" id="8c0f02c1-2b14-469f-baad-13285be30a00" name="Default" comment="Added header controller.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/app.js" afterPath="$PROJECT_DIR$/js/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/authentication/login.html" afterPath="$PROJECT_DIR$/js/app/authentication/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/authentication/login.js" afterPath="$PROJECT_DIR$/js/app/authentication/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/authentication/userService.js" afterPath="$PROJECT_DIR$/js/app/authentication/userService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/home/home.html" afterPath="$PROJECT_DIR$/js/app/home/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/home/home.js" afterPath="$PROJECT_DIR$/js/app/home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/index.html" afterPath="$PROJECT_DIR$/js/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/services/commonService.js" afterPath="$PROJECT_DIR$/js/app/services/commonService.js" />
     </list>
     <ignored path="angularjs-skeleton-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,28 +33,8 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app/authentication/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56902003">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.846154">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.43665767">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,11 +44,11 @@
         <entry file="file://$PROJECT_DIR$/js/app/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
               <folding>
-                <marker date="1457149049442" expanded="true" signature="3465:3509" placeholder="..." />
-                <marker date="1457149049442" expanded="true" signature="3525:3573" placeholder="..." />
-                <marker date="1457149049442" expanded="true" signature="3592:3638" placeholder="..." />
+                <marker date="1457402749286" expanded="true" signature="3490:3534" placeholder="..." />
+                <marker date="1457402749286" expanded="true" signature="3550:3598" placeholder="..." />
+                <marker date="1457402749286" expanded="true" signature="3617:3663" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -87,11 +64,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="userService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app/authentication/userService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+              <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -100,8 +87,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-36.923077">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state vertical-scroll-proportion="-9.230769">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -112,6 +99,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-13.076923">
               <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commonService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/services/commonService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,9 +154,7 @@
         <option value="$PROJECT_DIR$/js/app/home/languages.js" />
         <option value="$PROJECT_DIR$/js/app/views/home.html" />
         <option value="$PROJECT_DIR$/js/app/login/login.js" />
-        <option value="$PROJECT_DIR$/js/app/home/home.html" />
         <option value="$PROJECT_DIR$/js/app/languages/languagesService.js" />
-        <option value="$PROJECT_DIR$/js/app/services/commonService.js" />
         <option value="$PROJECT_DIR$/js/app/katas/katas.html" />
         <option value="$PROJECT_DIR$/js/app/katas/katas.js" />
         <option value="$PROJECT_DIR$/js/app/languages/languages.js" />
@@ -168,12 +163,14 @@
         <option value="$PROJECT_DIR$/js/app/login/loginService.js" />
         <option value="$PROJECT_DIR$/js/app/authentication/loginService.js" />
         <option value="$PROJECT_DIR$/js/app/authentication/authenticationService.js" />
-        <option value="$PROJECT_DIR$/js/app/home/home.js" />
         <option value="$PROJECT_DIR$/js/app/authentication/login.html" />
         <option value="$PROJECT_DIR$/js/app/common/navBar.html" />
         <option value="$PROJECT_DIR$/js/app/index.html" />
         <option value="$PROJECT_DIR$/js/app/app.js" />
+        <option value="$PROJECT_DIR$/js/app/home/home.html" />
+        <option value="$PROJECT_DIR$/js/app/home/home.js" />
         <option value="$PROJECT_DIR$/js/app/authentication/userService.js" />
+        <option value="$PROJECT_DIR$/js/app/services/commonService.js" />
         <option value="$PROJECT_DIR$/js/app/common/header.js" />
         <option value="$PROJECT_DIR$/js/app/authentication/login.js" />
       </list>
@@ -320,6 +317,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="languages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angularjs-skeleton-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angularjs-skeleton-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="katas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1132,7 +1151,7 @@
       <workItem from="1456638611768" duration="5452000" />
       <workItem from="1456694891295" duration="11512000" />
       <workItem from="1457049457912" duration="19271000" />
-      <workItem from="1457198533247" duration="19322000" />
+      <workItem from="1457198533247" duration="30976000" />
     </task>
     <task id="LOCAL-00001" summary="Added login">
       <created>1456282831316</created>
@@ -1152,11 +1171,17 @@
       <option name="project" value="LOCAL" />
       <updated>1456880510000</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added header controller.">
+      <created>1457233403547</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1457233403547</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192819000" />
+    <option name="totallyTimeSpent" value="204473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="52" width="1942" height="2119" extended-state="0" />
@@ -1164,6 +1189,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1171,7 +1197,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15901981" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23149113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1179,7 +1205,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1227,11 +1252,24 @@
     <MESSAGE value="Added login" />
     <MESSAGE value="Added commonService and started login" />
     <MESSAGE value="Removing unnecessary code throwing duplicate error." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing unnecessary code throwing duplicate error." />
+    <MESSAGE value="Added header controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added header controller." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/services/commonService.js</url>
+          <line>30</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/common/header.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1268,9 +1306,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457149049442" expanded="true" signature="3465:3509" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3525:3573" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3592:3638" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3490:3534" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3550:3598" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3617:3663" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1325,9 +1363,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457149049442" expanded="true" signature="3465:3509" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3525:3573" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3592:3638" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3490:3534" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3550:3598" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3617:3663" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1382,9 +1420,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457149049442" expanded="true" signature="3465:3509" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3525:3573" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3592:3638" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3490:3534" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3550:3598" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3617:3663" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1439,9 +1477,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457149049442" expanded="true" signature="3465:3509" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3525:3573" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3592:3638" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3490:3534" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3550:3598" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3617:3663" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1562,34 +1600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/services/commonService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22113022">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding>
-            <marker date="1457149049442" expanded="true" signature="3465:3509" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3525:3573" placeholder="..." />
-            <marker date="1457149049442" expanded="true" signature="3592:3638" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.923077">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app/authentication/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-100.76923">
@@ -1603,14 +1613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.846154">
@@ -1619,10 +1621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app/authentication/userService.js">
+    <entry file="file://$PROJECT_DIR$/js/app/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        <state vertical-scroll-proportion="-9.230769">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1631,6 +1633,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.076923">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+          <folding>
+            <marker date="1457402749286" expanded="true" signature="3490:3534" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3550:3598" placeholder="..." />
+            <marker date="1457402749286" expanded="true" signature="3617:3663" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/authentication/userService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/services/commonService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1645,8 +1683,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app/authentication/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56902003">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.43665767">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

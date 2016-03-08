@@ -48,7 +48,7 @@ angular.module('app')
                     console.log("Login Failed!", error);
                 } else {
                     console.log("Authenticated successfully with payload:", authData);
-                    callback(true);
+                    callback(authData);
                 }
 
             });

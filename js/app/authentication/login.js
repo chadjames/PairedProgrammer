@@ -11,6 +11,7 @@ angular.module('app.login', ['ngRoute'])
                                                $scope,
                                                programmerService,
                                                $rootScope,
+                                               retrieveUserService,
                                                userCreationService) {
 
     $scope.register = function () {
@@ -29,22 +30,13 @@ angular.module('app.login', ['ngRoute'])
             $scope.username,
             $scope.password,
             function (result) {
-                if (result) {
-                    //get the user object for the id and store
-                    var prog = programmerService.allProgrammers();
-                    prog.$loaded()
-                        .then(function () {
-
-                            angular.forEach(prog, function (p) {
-                                console.log(p);
-                            })
-                        });
-
-                    $cookies.put('currentUser', $scope.username);
-                    userCreationService.currentUser = $scope.username;
+                retrieveUserService.findUser(result.uid, function (user) {
+                    $cookies.put('currentUser', user.userName);
+                    userCreationService.currentUser = user.userName;
                     $window.location.href = '#home';
+                });
 
-                }
+
             }
         );
 

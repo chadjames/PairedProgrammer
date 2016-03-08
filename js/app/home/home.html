@@ -9,8 +9,8 @@
             <div class="panel panel-default shuffle-group" >
                 <div class="panel-heading shuffle-group-heading"><a>Programmer</a></div>
                 <div class="panel-body shuffle-group-panel fixed-panel" style="max-height: 300px;min-height:300px;overflow-y:scroll;">
-                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="x in programmers">
-                        {{ x.name }}
+                    <div ng-click="liClick($event)" class="shuffle-group-item list-group-item" ng-repeat="programmer in programmers">
+                        {{programmer.userName}}
                     </div>
                 </div>
 
