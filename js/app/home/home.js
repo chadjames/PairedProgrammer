@@ -5,7 +5,15 @@ angular.module('app.home', ['ngRoute'])
             templateUrl: 'home/home.html',
             controller: 'homeController'
         });
-    }]).controller('homeController', function ($window,acceptService, programmerService, kataService, languageService, $scope, $interval, $timeout, $rootScope) {
+    }]).controller('homeController', function ($window,
+                                               acceptService,
+                                               programmerService,
+                                               kataService,
+                                               languageService,
+                                               $scope,
+                                               $interval,
+                                               $timeout,
+                                               $rootScope) {
 
     $scope.programmers = programmerService.allProgrammers();
     $scope.languages = languageService.allLanguages();
@@ -13,21 +21,22 @@ angular.module('app.home', ['ngRoute'])
 
     var data_arrays = [$scope.programmers, $scope.languages, $scope.katas];
     var current_shuffle_index = 0;
-    var completeSpin = false;
     var selectedPerson;
     var selectedLanguage;
     var selectedKata;
 
-    function stopTimerAndSelect() {
-        if (angular.isDefined($scope.timer)) {
-            $interval.cancel($scope.timer);
-            selectItemForGroup();
-        }
+    $scope.decline = function(){
+        resetBoard();
+        $scope.closeModal();
+    };
+    $scope.accept = function(){
+        $scope.closeModal();
+        acceptService.setData(selectedPerson,selectedLanguage, selectedKata);
+        $window.location.href = '#partnerAccept';
     };
     $scope.getLoggedInUser = function () {
-        console.log('test');
         return $rootScope.authenticatedUser;
-    }
+    };
 
     $scope.shuffle = function (array) {
 
@@ -58,16 +67,33 @@ angular.module('app.home', ['ngRoute'])
         }
 
     };
+
+    $scope.closeModal = function(){
+        $('#myModal').removeClass('in');
+        $('#myModal').css('display','none');
+    };
+
+
+    function stopTimerAndSelect() {
+        if (angular.isDefined($scope.timer)) {
+            $interval.cancel($scope.timer);
+            selectItemForGroup();
+        }
+    };
+
+    function showModal(){
+        $('#myModal').addClass('in');
+        $('#myModal').css('display','block');
+        $('div.modal-body').html('Your mission, should you choose to accept, is to complete the <b>' + selectedKata + '</b> kata in <b>' + selectedLanguage + '</b> with <b>' + selectedPerson +'</b>');
+    }
+
     function resetBoard() {
         current_shuffle_index = 0;
-        completeSpin = false;
         $('.selected').each(function () {
             $(this).removeClass('selected');
             $(this).css('background-color', 'white');
         });
-        selectedPerson = null;
-        selectedLanguage = null;
-        selectedKata = null;
+
     }
     function setSelectedItems() {
         var results = [];
@@ -78,9 +104,7 @@ angular.module('app.home', ['ngRoute'])
         selectedLanguage = results[1];
         selectedKata = results[2];
     }
-    function accept(){
-        acceptService.setData(selectedPerson,selectedLanguage, selectedKata);
-    }
+
     function selectItemForGroup() {
         var currentGroup = $('.shuffle-group')[current_shuffle_index];
         var child = $(currentGroup).children('.shuffle-group-panel').children('.shuffle-group-item')[2];
@@ -90,30 +114,9 @@ angular.module('app.home', ['ngRoute'])
         if (current_shuffle_index < data_arrays.length - 1) {
             $scope.shuffle(data_arrays[++current_shuffle_index])
         } else {
-            completeSpin = true;
+            current_shuffle_index = 0;
             setSelectedItems();
-            $(function () {
-                $("#dialog").dialog(
-                    {
-                        title: 'Your Mission', width: 600,
-                        buttons: {
-                            "DECLINE": function () {
-                                resetBoard();
-                                $(this).dialog("close");
-                            },
-                            "ACCEPT": function () {
-                                accept();
-                                $(this).dialog("close");
-                                $window.location.href = '#partnerAccept';
-
-                            }
-                        }
-                    }
-                ).html('Your mission, should you choose to accept, is to complete the <b>' +
-                    selectedKata + '</b> kata in the <b>' +
-                    selectedLanguage + '</b> language  with <b>' +
-                    selectedPerson + '</b>');
-            });
+            showModal();
         }
     }
 });

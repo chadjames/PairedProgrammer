@@ -38,7 +38,20 @@
 
 <div class="container" ng-controller="homeController">
 
-    <div id="dialog" title="Basic dialog">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Mission Statement</h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="accept()">ACCEPT</button>
+                    <button type="button" class="btn btn-default" ng-click="decline()">DECLINE</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 
