@@ -25,7 +25,7 @@ angular.module('app')
         var ref = new Firebase("https://paired-progammer.firebaseio.com/programmer");
     return {
         findUser: function(uid, callback){
-            ref.orderByChild("firstName").equalTo('chad').once('value', function(snapshot){
+            ref.orderByChild("uid").equalTo(uid).once('value', function(snapshot){
                 callback(snapshot.val()[Object.keys(snapshot.val())[0]]);
             });
 
